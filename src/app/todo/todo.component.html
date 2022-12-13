@@ -1,0 +1,25 @@
+<h1>Todo List</h1>
+
+<div *ngIf="editClicked">
+  <input #updatedTodo type="text" value="{{ currentTodoData.todo }}" />
+  <button (click)="updateTodo(currentTodoData.id, updatedTodo.value)">
+    Update
+  </button>
+</div>
+
+<div *ngIf="!editClicked">
+  <input #todo type="text" placeholder="Write your todo" />
+  <button (click)="addTodo(todo.value)">Add Todo</button>
+</div>
+
+<br />
+<br />
+<br />
+
+<ul>
+  <li *ngFor="let todo of todos">
+    {{ todo.todo }}
+    <button (click)="editTodo(todo.id)">Edit</button>
+    <button (click)="deleteTodo(todo.id)">Delete</button>
+  </li>
+</ul>
