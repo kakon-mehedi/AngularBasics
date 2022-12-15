@@ -1,0 +1,10 @@
+<p>comp1 works!</p>
+
+<ul>
+  <li *ngFor="let data of datas">
+    {{ data.id }} = {{ data.first_name }} = {{ data.email }}
+
+    <button (click)="handleEdit(data.id)">Edit</button>
+    <button (click)="handleDelete(data.id)" class="danger">Delete</button>
+  </li>
+</ul>
