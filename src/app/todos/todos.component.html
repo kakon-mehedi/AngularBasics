@@ -1,0 +1,10 @@
+<p>Todo List</p>
+
+<form action="" onsubmit="handleFormSubmit(form.value)" #form>
+  <input type="text" placeholder="add todo" />
+  <button type="submit">Add todo</button>
+</form>
+
+<div class="todos">
+  <app-todo [todos]="todos"></app-todo>
+</div>
