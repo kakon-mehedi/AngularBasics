@@ -1,1 +1,7 @@
-<p>single-category works!</p>
+<div class="row">
+  <div class="col-md-12" *ngIf="category">
+    <h5>{{ category.title }}</h5>
+    <div>{{ category.id }}</div>
+    <div>{{ category.description }}</div>
+  </div>
+</div>

@@ -1,1 +1,14 @@
-<p>categories works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <app-add-category></app-add-category>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <app-single-category
+      *ngFor="let category of categories"
+      [category]="category"
+    ></app-single-category>
+  </div>
+</div>
