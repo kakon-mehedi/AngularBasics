@@ -11,4 +11,8 @@ export class TodosComponent {
   handleFormSumit(data: any) {
     console.log(data);
   }
+
+  handleInputQuery(e: any) {
+    console.log(e);
+  }
 }

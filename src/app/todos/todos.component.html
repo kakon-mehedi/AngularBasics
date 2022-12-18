@@ -8,3 +8,5 @@
 <div class="todos">
   <app-todo [todos]="todos"></app-todo>
 </div>
+
+<app-child (inputQuery)="handleInputQuery($event)"></app-child>
