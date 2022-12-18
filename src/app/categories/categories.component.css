@@ -1,0 +1,17 @@
+.category-container {
+  display: flex;
+}
+
+.category-list {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 3px;
+  grid-auto-flow: dense;
+}
+
+.show-category {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}

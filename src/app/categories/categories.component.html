@@ -1,14 +1,28 @@
 <div class="row">
   <div class="col-md-12">
-    <app-add-category></app-add-category>
+    <app-add-category (addCategory)="addCategory($event)"></app-add-category>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
+<div class="category-container">
+  <div class="category-list">
     <app-single-category
       *ngFor="let category of categories"
       [category]="category"
+      (viewCategory)="handleView($event)"
+      (editCategory)="handleEdit($event)"
+      (deleteCategory)="handleDelete($event)"
     ></app-single-category>
+  </div>
+
+  <div class="show-category">
+    <app-show-category *ngIf="categoryDetails" [category]="categoryDetails">
+    </app-show-category>
+
+    <app-edit-category
+      *ngIf="editCategoryDetails"
+      [category]="editCategoryDetails"
+      (updateCategory)="handleUpdate($event)"
+    ></app-edit-category>
   </div>
 </div>

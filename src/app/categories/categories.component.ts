@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { ICategory } from '../models/ICategory';
 
-interface user {
-  id: number;
-  name: string;
-  gender: string;
-}
-
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -17,11 +11,38 @@ export class CategoriesComponent {
     { id: 1, title: 'Category 1', description: 'Category Description' },
   ];
 
-  showData() {
-    const person1: user = {
-      id: 'kakon',
-      name: 135,
-      gender: 'male',
-    };
+  categoryDetails: ICategory | null = null;
+  editCategoryDetails: ICategory | null = null;
+
+  addCategory(category: ICategory) {
+    category.id = this.categories.length + 1;
+    this.categories.push(category);
+  }
+
+  handleView(category: ICategory) {
+    this.categoryDetails = category;
+    this.editCategoryDetails = null;
+  }
+
+  handleEdit(category: ICategory) {
+    this.editCategoryDetails = category;
+    this.categoryDetails = null;
+  }
+
+  handleUpdate(category: ICategory) {
+    this.categories = this.categories.map((cat) => {
+      if (cat.id === category.id) {
+        return category;
+      } else {
+        return cat;
+      }
+    });
+    this.editCategoryDetails = null;
+  }
+
+  handleDelete(category: ICategory) {
+    this.categories = this.categories.filter((cat) => {
+      return cat.id !== category.id;
+    });
   }
 }

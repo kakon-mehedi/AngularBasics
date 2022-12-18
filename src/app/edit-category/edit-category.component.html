@@ -1,0 +1,15 @@
+<h5>Edit category</h5>
+
+<div class="my-2">
+  <label>Ttile</label>
+  <input [(ngModel)]="title" type="text" class="form-control" />
+</div>
+
+<div class="my-2">
+  <label>description</label>
+  <textarea name="" class="form-control" [(ngModel)]="description"></textarea>
+</div>
+
+<div class="my-2">
+  <button class="btn btn-primary" (click)="handleUpdateClick()">Update</button>
+</div>

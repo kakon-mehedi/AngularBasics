@@ -2,14 +2,19 @@
 
 <div class="my-2">
   <label>Ttile</label>
-  <input type="text" class="form-control" />
+  <input
+    [value]="inputDefaultValue"
+    type="text"
+    class="form-control"
+    [(ngModel)]="title"
+  />
 </div>
 
 <div class="my-2">
   <label>description</label>
-  <textarea name="" class="form-control"></textarea>
+  <textarea name="" class="form-control" [(ngModel)]="description"></textarea>
 </div>
 
 <div class="my-2">
-  <button class="btn btn-primary">Add category</button>
+  <button class="btn btn-primary" (click)="handleClick()">Add category</button>
 </div>
