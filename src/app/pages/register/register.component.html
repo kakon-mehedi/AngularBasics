@@ -1,21 +1,28 @@
-<app-navbar></app-navbar>
-
-<form class="container registration-form">
+<form
+  class="container registration-form"
+  #registrationForm="ngForm"
+  (ngSubmit)="handleSubmit(registrationForm.value)"
+>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
-    <input type="text" class="form-control" />
+    <input ngModel type="text" class="form-control" name="name" />
     <div id="emailHelp" class="form-text"></div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Roll</label>
-    <input type="text" class="form-control" />
+    <input ngModel type="text" class="form-control" name="roll" />
     <div id="emailHelp" class="form-text"></div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Department</label>
-    <select class="form-select" aria-label="Default select example">
+    <select
+      ngModel
+      class="form-select"
+      name="dept"
+      aria-label="Default select example"
+    >
       <option selected>Select Department</option>
       <option value="CSE">CSE</option>
       <option value="EEE">EEE</option>
@@ -25,7 +32,7 @@
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Mobile</label>
-    <input type="text" class="form-control" />
+    <input ngModel type="text" class="form-control" name="mobile" />
     <div id="emailHelp" class="form-text"></div>
   </div>
 
