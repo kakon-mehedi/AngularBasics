@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { categoryEnum } from './model/categoryEnum';
+import { CategoryServiceService } from './services/category-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Hello Angular';
+  constructor(private categoryService: CategoryServiceService) {}
+  selectedComponent = categoryEnum.categories;
 
-  showOwnerName = () => {
-    return 'Kakon Mehedi';
-  };
+  // This is the main code who handles all the output event emit
+
+  ngOnInit() {
+    this.categoryService.selectedComponentEvent.subscribe((data) => {
+      this.selectedComponent = data;
+    });
+  }
+
+  handleAddCategoryClick() {
+    this.selectedComponent = categoryEnum.addCategory;
+  }
 }

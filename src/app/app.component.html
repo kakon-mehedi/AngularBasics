@@ -1,1 +1,29 @@
-<p>This is a fresh Angualr</p>
+<router-outlet></router-outlet>
+<div class="container">
+  <h5 class="my-3" routerLink="home">Categories Data</h5>
+</div>
+
+<div class="row container">
+  <div class="col-md-12 text-end">
+    <button
+      class="btn btn-primary text-end my-4"
+      (click)="handleAddCategoryClick()"
+    >
+      Add category
+    </button>
+  </div>
+</div>
+
+<div class="container">
+  <app-categories *ngIf="selectedComponent === 'categories'"></app-categories>
+  <app-add-category
+    *ngIf="selectedComponent === 'add category'"
+  ></app-add-category>
+  <app-show-category
+    *ngIf="selectedComponent === 'view category'"
+  ></app-show-category>
+
+  <app-edit-category
+    *ngIf="selectedComponent === 'edit category'"
+  ></app-edit-category>
+</div>
