@@ -7,9 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutUsComponent, CategoriesComponent, NavigationComponent],
+  declarations: [AppComponent, HomeComponent, AboutUsComponent, CategoriesComponent, NavigationComponent, UserComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

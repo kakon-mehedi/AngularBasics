@@ -1,1 +1,15 @@
 <p>categories works!</p>
+
+<a
+  routerLink="/aboutus"
+  [queryParams]="{ q: 1234, genere: 'horror', search: 'Dark' }"
+  [fragment]="'movie'"
+  class="btn btn-primary"
+  >Go to About us page with this query params and Fragment via this link</a
+>
+<br />
+
+<a routerLink="/user/1/kakon" class="btn btn-primary my-2">
+  Getting Active Link Parameters from the link! Go to user.ts file => ngOnInit()
+  method to see the code</a
+>
