@@ -12,6 +12,7 @@ export class UserComponent {
   id = '';
 
   ngOnInit() {
+    // Fetching link Parameters value from the actived link
     this.route.params.subscribe((data: Params) => {
       this.name = data['name'];
       this.id = data['id'];
