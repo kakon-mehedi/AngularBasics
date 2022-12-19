@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 <div class="container">
-  <h5 class="my-3" routerLink="home">Categories Data</h5>
+  <h5 class="my-3">Categories Data</h5>
 </div>
 
 <div class="row container">
@@ -16,9 +16,11 @@
 
 <div class="container">
   <app-categories *ngIf="selectedComponent === 'categories'"></app-categories>
+
   <app-add-category
     *ngIf="selectedComponent === 'add category'"
   ></app-add-category>
+
   <app-show-category
     *ngIf="selectedComponent === 'view category'"
   ></app-show-category>
