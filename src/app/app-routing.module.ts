@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { UserFilterComponent } from './user-filter/user-filter.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'reactiveform', component: ReactiveFormsComponent },
+  { path: 'userfilter', component: UserFilterComponent },
   { path: '**', redirectTo: 'not-found' },
 ];
 

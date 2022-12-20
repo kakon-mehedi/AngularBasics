@@ -17,9 +17,9 @@
     }}</small>
   </div>
 
-  <div class="my-3" formArrayName="hobbies">
+  <div class="my-2" formArrayName="hobbies">
     <button
-      class="my-3 btn btn-primary"
+      class="my-1 btn btn-primary"
       type="button"
       (click)="handleAddHobbyClick()"
     >
@@ -27,20 +27,21 @@
     </button>
 
     <div
-      class="my-3"
+      class="my-2"
       *ngFor="let hobby of hobbiesControl.controls; let i = index"
     >
-      <input type="text" class="form-control" [formControlName]="i" />
+      <input
+        type="text"
+        placeholder="hobby name"
+        class="form-control"
+        [formControlName]="i"
+      />
     </div>
   </div>
 
   <br />
 
-  <button
-    type="submit"
-    class="btn btn-primary my-2"
-    [disabled]="!signUpForm.valid"
-  >
+  <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">
     Submit
   </button>
 </form>

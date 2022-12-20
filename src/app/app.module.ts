@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -10,7 +10,10 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { ShortNamePipe } from './pipes/short-name.pipe';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { UserFilterComponent } from './user-filter/user-filter.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 
@@ -26,8 +29,11 @@ import { UsersComponent } from './users/users.component';
     NotFoundComponent,
     EditUserComponent,
     ReactiveFormsComponent,
+    UserFilterComponent,
+    ShortNamePipe,
+    SearchPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

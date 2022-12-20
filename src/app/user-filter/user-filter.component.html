@@ -1,0 +1,21 @@
+<h4 class="text-center">Filter Component | Pipes</h4>
+
+<div class="my-3">
+  <input
+    placeholder="search"
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchQuery"
+  />
+</div>
+
+<div
+  class="my-3"
+  *ngFor="let user of users | search : searchQuery"
+  style="background-color: aliceblue"
+>
+  <p>ID: {{ user.id }}</p>
+  <!-- using uppercase built in pipe and shortName custom pipe which recives an argument value 3 -->
+  <p>Name: {{ user.name | uppercase | shortName : 5 }}</p>
+  <p>Joined: {{ user.joined | date : "fullDate" }}</p>
+</div>
