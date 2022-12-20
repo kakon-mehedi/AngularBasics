@@ -6,6 +6,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
     ],
   },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'reactiveform', component: ReactiveFormsComponent },
   { path: '**', redirectTo: 'not-found' },
 ];
 
