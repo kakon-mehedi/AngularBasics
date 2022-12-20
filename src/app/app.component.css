@@ -1,0 +1,35 @@
+.app-body {
+  display: flex;
+  position: relative;
+}
+
+.navigation-section {
+  min-height: 100vh;
+  flex: 2;
+  width: 300px;
+  background-color: #202a37;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+}
+
+.login-buttons {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.content-section {
+  flex: 10;
+  margin: 20px;
+  padding: 10px;
+}
+
+@media (max-width: 800px) {
+  .navigation-section {
+    flex: 4;
+  }
+
+  .content-section {
+    flex: 8;
+  }
+}
