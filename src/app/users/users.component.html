@@ -1,9 +1,37 @@
-<p>users works!</p>
+<p class="" style="background-color: antiquewhite; font-weight: bold">
+  Implimenting Child Routing In Users Component! Go to /users route file for
+  details
+</p>
 
 <ul>
-  <li><a routerLink="/users/1/kakon">Go to Kakons Profile</a></li>
-  <li><a routerLink="/users/2/borsha">Go to Borshas Profile</a></li>
-  <li><a routerLink="/users/3/mehedi">Go to Mehedis Profile</a></li>
+  <li>
+    <a
+      routerLink="/users/1/kakon"
+      [queryParams]="{ name: 'kakon', dept: 'cse' }"
+      [fragment]="'RajshahiUniversity'"
+      class="btn btn-primary my-2"
+      >Thease are child Route go to Kakons Profile with QueryParams and Fragment
+      with this link
+    </a>
+  </li>
+  <li>
+    <a
+      routerLink="/users/2/borsha"
+      [queryParams]="{ name: 'borsha', dept: 'cse' }"
+      [fragment]="'RajshahiUniversity'"
+      class="btn btn-primary"
+      >Child Route of User with Query and Fragment | Go to Borshas Profile
+    </a>
+  </li>
+  <li>
+    <a
+      routerLink="/users/3/mehedi"
+      [queryParams]="{ name: 'mehedi', dept: 'cse' }"
+      [fragment]="'RajshahiUniversity'"
+      class="btn btn-primary my-2"
+      >Child Route of User with Query and Fragment | Go to Mehedis Profile</a
+    >
+  </li>
 </ul>
 
 <div>

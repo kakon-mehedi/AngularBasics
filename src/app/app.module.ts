@@ -9,9 +9,11 @@ import { CategoriesComponent } from './categories/categories.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutUsComponent, CategoriesComponent, NavigationComponent, UserComponent, UsersComponent],
+  declarations: [AppComponent, HomeComponent, AboutUsComponent, CategoriesComponent, NavigationComponent, UserComponent, UsersComponent, NotFoundComponent, EditUserComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
