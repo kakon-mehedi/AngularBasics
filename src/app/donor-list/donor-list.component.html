@@ -2,16 +2,30 @@
 
 <div class="row my-4">
   <div class="col-md-7">
-    <input type="text" placeholder="search" class="form-control" />
+    <input
+      type="text"
+      placeholder="search"
+      class="form-control"
+      [(ngModel)]="searchQuery"
+    />
   </div>
   <div class="col-md-5">
     <div class="filter-by-group">
       <div>
-        <select class="select-input">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select
+          class="select-input"
+          [(ngModel)]="filterBy"
+          (change)="handleFilterChange(filterBy)"
+        >
+          <option selected value="">Choose...</option>
+          <option value="A(+)ve">A+</option>
+          <option value="B(+)ve">B+</option>
+          <option value="O(+)ve">O+</option>
+          <option value="AB(+)ve">AB+</option>
+          <option value="A(-)ve">A-</option>
+          <option value="B(-)ve">B-</option>
+          <option value="O(-)ve">O-</option>
+          <option value="AB(-)ve">AB-</option>
         </select>
       </div>
 
@@ -31,26 +45,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr
+      *ngFor="
+        let donor of donorsList | search : searchQuery | filterDonors : filterBy
+      "
+    >
+      <td>{{ donor.name }}</td>
+      <td>{{ donor.address }}</td>
+      <td>{{ donor.bloodGroup }}</td>
+      <td>{{ donor.mobile }}</td>
       <td class="go-center">
-        <button class="btn btn-primary btn-sm">show</button>
-        <button class="btn btn-warning btn-sm mx-2">edit</button>
-        <button class="btn btn-danger btn-sm">delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td class="go-center">
-        <button class="btn btn-primary btn-sm">show</button>
-        <button class="btn btn-warning btn-sm mx-2">edit</button>
-        <button class="btn btn-danger btn-sm">delete</button>
+        <a routerLink="/donor/1" class="btn btn-primary btn-sm">Show</a>
+        <a routerLink="/donor/1/edit" class="btn btn-warning btn-sm mx-2"
+          >Edit</a
+        >
+        <a routerLink="/donor/1/delete" class="btn btn-danger btn-sm">Delete</a>
       </td>
     </tr>
   </tbody>
