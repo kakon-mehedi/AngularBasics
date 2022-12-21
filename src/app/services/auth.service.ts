@@ -1,9 +1,24 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor() {}
 
-  constructor() { }
+  @Output() loginEvent = new EventEmitter<any>();
+
+  isLoggedIn = false;
+
+  login() {
+    this.isLoggedIn = true;
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+  }
+
+  isAuthenticated() {
+    return this.isLoggedIn;
+  }
 }

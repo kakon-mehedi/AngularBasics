@@ -6,14 +6,22 @@
     [routerLinkActiveOptions]="{ exact: true }"
     >Home</a
   >
-  <a routerLink="/donorList" class="nav-link" routerLinkActive="active"
+  <a
+    routerLink="/donorList"
+    class="nav-link"
+    routerLinkActive="active"
+    *ngIf="loginStatus"
     >Donor List</a
   >
   <a routerLink="/addDonor" class="nav-link" routerLinkActive="active"
     >Add Donor</a
   >
 
-  <a routerLink="/viewBloodRequest" class="nav-link" routerLinkActive="active"
+  <a
+    routerLink="/viewBloodRequest"
+    class="nav-link"
+    routerLinkActive="active"
+    *ngIf="loginStatus"
     >Blood Requests</a
   >
 </nav>
