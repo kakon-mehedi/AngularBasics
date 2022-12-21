@@ -7,6 +7,8 @@ import { Idonar } from '../model/Idonor';
 export class DataService {
   constructor() {}
 
+  bloodRequest: any[] = [];
+
   donorsData: Idonar[] = [
     {
       id: 1,

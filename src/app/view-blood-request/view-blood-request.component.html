@@ -11,22 +11,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let user of currentBloodRequests">
+      <td>{{ user.name }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.mobile }}</td>
+      <td>{{ user.bloodGroup }}</td>
       <td class="go-center">
-        <button class="btn btn-danger btn-sm">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td class="go-center">
-        <button class="btn btn-danger btn-sm">Delete</button>
+        <button
+          class="btn btn-danger btn-sm"
+          (click)="handleDeleteClick(user.id)"
+        >
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>

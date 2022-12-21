@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DonorService } from '../services/donor.service';
 
 @Component({
   selector: 'app-add-donor',
@@ -7,7 +9,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-donor.component.css'],
 })
 export class AddDonorComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private donorService: DonorService,
+    private router: Router
+  ) {}
 
   addDonorForm: FormGroup = this.fb.group({
     name: ['', [Validators.required]],
@@ -15,6 +21,8 @@ export class AddDonorComponent {
       '',
       [Validators.required, Validators.minLength(11), Validators.maxLength(11)],
     ],
+    address: [''],
+    lastDonationDate: [''],
     email: ['', [Validators.required, Validators.email]],
     bloodGroup: ['', [Validators.required]],
   });
@@ -67,6 +75,7 @@ export class AddDonorComponent {
   }
 
   handleFormSubmit() {
-    console.log(this.addDonorForm);
+    this.donorService.addDonor(this.addDonorForm.value);
+    this.router.navigateByUrl('/donorList');
   }
 }

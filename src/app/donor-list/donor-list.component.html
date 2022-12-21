@@ -55,11 +55,17 @@
       <td>{{ donor.bloodGroup }}</td>
       <td>{{ donor.mobile }}</td>
       <td class="go-center">
-        <a routerLink="/donor/1" class="btn btn-primary btn-sm">Show</a>
-        <a routerLink="/donor/1/edit" class="btn btn-warning btn-sm mx-2"
+        <a routerLink="/donor/{{ donor.id }}" class="btn btn-primary btn-sm"
+          >Show</a
+        >
+        <a
+          routerLink="/donor/{{ donor.id }}/edit"
+          class="btn btn-warning btn-sm mx-2"
           >Edit</a
         >
-        <a routerLink="/donor/1/delete" class="btn btn-danger btn-sm">Delete</a>
+        <a class="btn btn-danger btn-sm" (click)="handleDeleteClick(donor.id)"
+          >Delete</a
+        >
       </td>
     </tr>
   </tbody>

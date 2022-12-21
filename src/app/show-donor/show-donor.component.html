@@ -3,16 +3,27 @@
 <table class="table table-bordered table-hover my-3">
   <tbody>
     <tr>
-      <th>First Name</th>
-      <td>John</td>
+      <th>Name</th>
+      <td>{{ donor.name }}</td>
     </tr>
     <tr>
-      <th>Last Name</th>
-      <td>Carter</td>
+      <th>Blood Group</th>
+      <td class="text-success fw-bold">{{ donor.bloodGroup }}</td>
     </tr>
+
     <tr>
-      <th>Email</th>
-      <td>johncarter@mail.com</td>
+      <th>Address</th>
+      <td>{{ donor.address }}</td>
+    </tr>
+
+    <tr>
+      <th>Mobile Number</th>
+      <td>{{ donor.mobile }}</td>
+    </tr>
+
+    <tr>
+      <th>Last Donation Date</th>
+      <td class="text-danger fw-bold">{{ donor.lastDonationDate }}</td>
     </tr>
   </tbody>
 </table>
