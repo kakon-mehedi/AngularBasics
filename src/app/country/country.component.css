@@ -1,5 +1,5 @@
 .example-card {
-  max-height: 450px;
+  min-height: 450px;
   max-width: 400px;
   position: relative;
 }

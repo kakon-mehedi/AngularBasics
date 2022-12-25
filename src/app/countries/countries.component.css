@@ -4,3 +4,9 @@
   grid-gap: 30px;
   grid-auto-flow: dense;
 }
+
+.pagination-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}

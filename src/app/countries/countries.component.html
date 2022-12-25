@@ -1,3 +1,16 @@
+<div class="pagination-section">
+  <mat-paginator
+    [length]="data.length"
+    [pageSize]="10"
+    [pageSizeOptions]="[1, 5, 10, 25, 100]"
+    aria-label="Select page"
+    (page)="handlePageChange($event)"
+  >
+  </mat-paginator>
+</div>
 <div class="country-list">
-  <app-country *ngFor="let country of data" [country]="country"></app-country>
+  <app-country
+    *ngFor="let country of dataPaginate"
+    [country]="country"
+  ></app-country>
 </div>
