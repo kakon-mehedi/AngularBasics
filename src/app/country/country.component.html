@@ -1,0 +1,35 @@
+<mat-card class="example-card country-card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="example-header-image"
+      style="background-image: url('{{ country.coatOfArms.png }}')"
+    ></div>
+    <mat-card-title>{{ country.name.common }}</mat-card-title>
+    <mat-card-subtitle>{{ country.region }}</mat-card-subtitle>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="more-icon">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="handleDeleteClick(country.name.common)">
+        Delete
+      </button>
+    </mat-menu>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="{{ country.flags.png }}"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content>
+    <p class="country-description">
+      {{ country.name.common }} is a country of {{ country.region }} region. It
+      has {{ country.population }} numbers of people and It's capital name is
+      {{ country.capital }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="handleShowClick()">SHOW</button>
+    <button mat-button (click)="handleEditClick()">EDIT</button>
+  </mat-card-actions>
+</mat-card>

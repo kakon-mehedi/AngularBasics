@@ -16,3 +16,7 @@
 .sidenav .mat-toolbar {
   background: inherit;
 }
+
+.content-container {
+  padding: 20px;
+}
