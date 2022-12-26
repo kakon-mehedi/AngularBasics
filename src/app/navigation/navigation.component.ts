@@ -17,4 +17,11 @@ export class NavigationComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  lightMode = true;
+
+  handleDarkModeClick() {
+    this.lightMode = !this.lightMode;
+    document.body.classList.toggle('darkMode');
+  }
 }
