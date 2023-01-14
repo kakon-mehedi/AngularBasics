@@ -1,0 +1,24 @@
+.todo-app {
+  display: flex;
+}
+
+.left {
+  height: 100vh;
+  width: 100%;
+  flex: 2;
+}
+
+.add-todo {
+  height: 200px;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+.right {
+  background-color: aqua;
+  flex: 1;
+}
+
+.show-none {
+  display: none;
+}

@@ -1,0 +1,28 @@
+<div class="todo-app">
+  <div class="left" (click)="handleHideClick(rightSide)">
+    <div class="add-todo">
+      <app-add-todo></app-add-todo>
+    </div>
+
+    <div class="todo-list" *ngFor="let todo of todos">
+      <app-single-todo
+        [todo]="todo"
+        (buttonIsClicked)="handleButtonClick($event)"
+        (currentTodo)="handleCurrentTodo($event)"
+        [rightSide]="rightSide"
+      ></app-single-todo>
+    </div>
+  </div>
+
+  <div class="right" #rightSide>
+    <app-show-todo
+      *ngIf="showClicked"
+      [currentTodo]="currentTodo"
+    ></app-show-todo>
+    <app-edit-todo
+      *ngIf="editClicked"
+      [currentTodo]="currentTodo"
+      (updatedTodo)="handleUpdateTodo($event)"
+    ></app-edit-todo>
+  </div>
+</div>

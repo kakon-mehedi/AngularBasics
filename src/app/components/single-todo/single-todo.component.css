@@ -1,0 +1,17 @@
+.single-todo {
+  background-color: antiquewhite;
+}
+
+button {
+  border: 0;
+  padding: 10px 20px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

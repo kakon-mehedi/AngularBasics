@@ -1,0 +1,4 @@
+<h2>Edit Todo</h2>
+
+<input #update type="text" value="{{ currentTodo.task }}" />
+<button (click)="handleUpdateClick(update.value)">Update</button>
