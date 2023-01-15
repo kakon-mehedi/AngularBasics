@@ -7,16 +7,34 @@ import { APIService } from 'src/app/services/api.service';
   styleUrls: ['./add-post.component.css'],
 })
 export class AddPostComponent {
-  constructor(private apiService: APIService) {}
+  constructor(private apiService: APIService) {
+    this.apiService.isEditClicked.subscribe((data) => {
+      this.editClicked = data;
+      this.handleEditClick();
+    });
+  }
 
+  authorNameValue = '';
+  postValue = '';
   submitButtonText = 'Submit';
   submitButtonColor = 'primary';
+  editClicked: any;
+  urlKey = '';
 
   // POSTING FORM DATA
 
   handleSubmit(formValue: any) {
     this.handleStatus();
-    this.apiService.postData(formValue);
+
+    if (this.editClicked) {
+      this.apiService.editPostData(formValue, this.urlKey);
+      setTimeout(() => {
+        this.authorNameValue = '';
+        this.postValue = '';
+      }, 2000);
+    } else {
+      this.apiService.postData(formValue);
+    }
   }
 
   // Sending Status Check and Changing button clolor
@@ -34,7 +52,18 @@ export class AddPostComponent {
         this.submitButtonColor = 'primary';
       }
     });
+  }
 
-    console.log('Status function called');
+  handleEditClick() {
+    let currentID;
+    let currentPost;
+
+    this.apiService.currentID.subscribe((id) => {
+      currentID = id;
+      currentPost = this.apiService.findCurrenPostData(currentID);
+      this.authorNameValue = currentPost.authorName;
+      this.postValue = currentPost.post;
+      this.urlKey = currentPost.postId;
+    });
   }
 }

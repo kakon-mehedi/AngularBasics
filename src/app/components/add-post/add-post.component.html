@@ -1,4 +1,4 @@
-<h1 class="page-heading">Add Post</h1>
+<h1 class="page-heading">{{ editClicked ? "Update" : "Add Post" }}</h1>
 
 <div class="container">
   <form
@@ -13,6 +13,7 @@
         matInput
         ngModel
         name="authorName"
+        value="{{ authorNameValue }}"
         required
       />
     </mat-form-field>
@@ -24,6 +25,7 @@
         matInput
         ngModel
         name="post"
+        value="{{ postValue }}"
         required
       />
     </mat-form-field>

@@ -14,6 +14,7 @@ import { ShowPostComponent } from './components/show-post/show-post.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
 import { MaterialModule } from './modules/material/material.module';
 import { HomeComponent } from './pages/home/home.component';
+import { DeleteComponent } from './popups/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeComponent } from './pages/home/home.component';
     ShowPostComponent,
     EditPostComponent,
     SinglePostComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <app-add-post></app-add-post>
 
 <div class="post-list container">
-  <div class="post" *ngFor="let post of posts.reverse()">
-    <app-single-post [post]="post"></app-single-post>
+  <div class="post" *ngFor="let post of posts; index as currentIndex">
+    <app-single-post [post]="post" [currentID]="currentIndex"></app-single-post>
   </div>
 </div>

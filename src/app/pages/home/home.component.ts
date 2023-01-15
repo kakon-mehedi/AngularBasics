@@ -19,6 +19,7 @@ export class HomeComponent {
     this.apiService.getPostData();
     this.apiService.fetchedPosts.subscribe((allPost) => {
       this.posts = allPost;
+      this.posts = this.posts.reverse();
     });
   }
 }

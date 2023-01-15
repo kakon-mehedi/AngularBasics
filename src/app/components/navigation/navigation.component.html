@@ -10,7 +10,11 @@
   <span>Firebase API Crud</span>
 
   <span class="example-spacer"></span>
-  <button mat-raised-button color="primary" routerLink="/addPost">
-    Add Post
+  <button
+    mat-raised-button
+    color="{{ buttonColor }}"
+    (click)="handleClearDataClick()"
+  >
+    {{ buttonText }}
   </button>
 </mat-toolbar>
