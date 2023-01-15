@@ -1,0 +1,40 @@
+<h1 class="page-heading">Add Post</h1>
+
+<div class="container">
+  <form
+    class="add-post"
+    #addPostForm="ngForm"
+    (ngSubmit)="handleSubmit(addPostForm.value)"
+  >
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Autor Name"
+        matInput
+        ngModel
+        name="authorName"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Your Post"
+        matInput
+        ngModel
+        name="post"
+        required
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="{{ submitButtonColor }}"
+      type="submit"
+      [disabled]="!addPostForm.valid"
+    >
+      {{ submitButtonText }}
+    </button>
+  </form>
+</div>
