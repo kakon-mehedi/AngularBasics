@@ -1,0 +1,41 @@
+<h1 class="page-heading">Todos App</h1>
+
+<div class="todo-app container">
+  <div class="left">
+    <h1 class="page-heading">Add Todo</h1>
+    <form
+      action=""
+      class="add-todo-form"
+      #todoForm="ngForm"
+      (ngSubmit)="handleSubmitClick(todoForm.value)"
+    >
+      <mat-form-field class="form-input">
+        <input
+          matInput
+          type="text"
+          placeholder="addTodo"
+          value=""
+          name="task"
+          ngModel
+        />
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary">Add Item</button>
+    </form>
+    <div class="left-mesh"></div>
+  </div>
+  <div class="right">
+    <h1 class="page-heading">Todo List</h1>
+    <ol class="todo-list">
+      <li
+        class="todo-item"
+        *ngFor="let todo of todos; index as currentIndex"
+        (click)="handleDeleteClick(currentIndex)"
+      >
+        {{ todo.task }}
+      </li>
+    </ol>
+
+    <div class="right-mesh"></div>
+  </div>
+</div>

@@ -15,6 +15,8 @@ import { SinglePostComponent } from './components/single-post/single-post.compon
 import { MaterialModule } from './modules/material/material.module';
 import { HomeComponent } from './pages/home/home.component';
 import { DeleteComponent } from './popups/delete/delete.component';
+import { TodosComponent } from './components/todos/todos.component';
+import { SingleTodoComponent } from './components/single-todo/single-todo.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { DeleteComponent } from './popups/delete/delete.component';
     EditPostComponent,
     SinglePostComponent,
     DeleteComponent,
+    TodosComponent,
+    SingleTodoComponent,
   ],
   imports: [
     BrowserModule,

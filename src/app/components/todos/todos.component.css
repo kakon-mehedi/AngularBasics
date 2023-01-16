@@ -1,0 +1,78 @@
+.todo-app {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 400px;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  margin-top: 1.2rem;
+  width: 70%;
+}
+
+.right {
+  height: 70vh;
+  flex: 1;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.todo-item {
+  background-color: rgba(244, 212, 169, 0.68);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.todo-item:hover {
+  background-color: rgb(244, 143, 143);
+  cursor: pointer;
+}
+
+.right-mesh {
+  position: absolute;
+  top: 0;
+  right: -30%;
+  height: 100%;
+  width: 300px;
+  border-radius: 20%;
+  background-color: rgb(194, 227, 255);
+  filter: blur(70px);
+  z-index: -9;
+}
+
+.left-mesh {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  height: 100%;
+  width: 300px;
+  border-radius: 20%;
+  background-color: rgb(255, 234, 210);
+  filter: blur(70px);
+  z-index: -9;
+}

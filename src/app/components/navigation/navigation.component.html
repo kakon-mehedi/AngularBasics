@@ -1,15 +1,17 @@
 <mat-toolbar color="primary">
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-    routerLink="/home"
-  >
-    <mat-icon>home</mat-icon>
+  <button mat-raised-button color="primary" routerLink="home">
+    Firebase API Crud
   </button>
-  <span>Firebase API Crud</span>
 
   <span class="example-spacer"></span>
+  <button
+    mat-raised-button
+    color="primary"
+    style="margin-right: 5px"
+    routerLink="todos"
+  >
+    TodoApp
+  </button>
   <button
     mat-raised-button
     color="{{ buttonColor }}"
