@@ -1,0 +1,5 @@
+<p>comp-b works!</p>
+<p>Username: {{ name }}</p>
+
+<input type="text" placeholder="name" #inputName />
+<button (click)="changeName(inputName.value)">Change Name</button>
