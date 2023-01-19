@@ -1,3 +1,14 @@
 .nav-link {
   color: lightgray !important;
 }
+
+.login-buttons {
+  display: none;
+}
+
+@media (max-width: 961px) {
+  .login-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}

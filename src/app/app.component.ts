@@ -9,17 +9,19 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   constructor(private authService: AuthService) {}
 
-  isLoggedIn = true;
+  isLoggedIn: any = false;
 
   handleLoginClick() {
     this.authService.login();
-    this.authService.loginEvent.emit(true);
-    this.isLoggedIn = true;
+    this.authService.isLoggedIn.subscribe((data) => {
+      this.isLoggedIn = data;
+    });
   }
 
   handleLogoutClick() {
     this.authService.logout();
-    this.authService.loginEvent.emit(false);
-    this.isLoggedIn = false;
+    this.authService.isLoggedIn.subscribe((data) => {
+      this.isLoggedIn = data;
+    });
   }
 }

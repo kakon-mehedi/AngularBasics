@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -6,19 +7,15 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 export class AuthService {
   constructor() {}
 
-  @Output() loginEvent = new EventEmitter<any>();
-
-  isLoggedIn = false;
+  isLoggedIn = new ReplaySubject();
 
   login() {
-    this.isLoggedIn = true;
+    this.isLoggedIn.next(true);
   }
 
   logout() {
-    this.isLoggedIn = false;
+    this.isLoggedIn.next(false);
   }
 
-  isAuthenticated() {
-    return this.isLoggedIn;
-  }
+  showData() {}
 }

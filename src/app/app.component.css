@@ -33,3 +33,9 @@
     flex: 8;
   }
 }
+
+@media (max-width: 961px) {
+  .login-buttons {
+    display: none;
+  }
+}

@@ -10,7 +10,7 @@
     routerLink="/donorList"
     class="nav-link"
     routerLinkActive="active"
-    *ngIf="loginStatus"
+    *ngIf="isLoggedIn"
     >Donor List</a
   >
   <a routerLink="/addDonor" class="nav-link" routerLinkActive="active"
@@ -21,7 +21,24 @@
     routerLink="/viewBloodRequest"
     class="nav-link"
     routerLinkActive="active"
-    *ngIf="loginStatus"
+    *ngIf="isLoggedIn"
     >Blood Requests</a
   >
+
+  <div class="login-buttons">
+    <button
+      class="btn btn-primary"
+      *ngIf="!isLoggedIn"
+      (click)="handleLoginClick()"
+    >
+      login
+    </button>
+    <button
+      class="btn btn-success"
+      *ngIf="isLoggedIn"
+      (click)="handleLogoutClick()"
+    >
+      logout
+    </button>
+  </div>
 </nav>

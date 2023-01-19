@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,5 +7,22 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent {
-  @Input() loginStatus!: boolean;
+  constructor(private authService: AuthService) {
+    this.authService.isLoggedIn.subscribe((status) => {
+      this.isLoggedIn = status;
+    });
+  }
+
+  isLoggedIn: any;
+
+  handleLoginClick() {
+    this.authService.login();
+    this.authService.isLoggedIn.subscribe((status) => {
+      this.isLoggedIn = status;
+    });
+  }
+
+  handleLogoutClick() {
+    this.authService.logout();
+  }
 }
