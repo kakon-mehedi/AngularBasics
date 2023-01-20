@@ -1,25 +1,16 @@
-<mat-toolbar color="primary">
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-raised-button color="primary" routerLink="home">
+    Angular Cart
   </button>
-  <span>Fresh Angular Mat</span>
+
   <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon routerLink="/header">favorite</mat-icon>
-  </button>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
-  >
-    <mat-icon>share</mat-icon>
+
+  <button mat-icon-button routerLink="showCart">
+    <mat-icon
+      matBadge="{{ totalItemsInCart }}"
+      [matBadgeHidden]="hidden"
+      matBadgeColor="warn"
+      >shopping_cart</mat-icon
+    >
   </button>
 </mat-toolbar>

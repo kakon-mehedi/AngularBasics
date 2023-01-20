@@ -1,0 +1,27 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="example-header-image"
+      style="
+        background-image: url('{{ product.productPhotoUrl }}');
+      "
+    ></div>
+    <mat-card-title>{{ product.productName }}</mat-card-title>
+    <mat-card-subtitle>Stock: {{ product.quantity }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="{{ product.productPhotoUrl }}"
+    alt="Photo of a Shiba Inu"
+    class="product-photo"
+  />
+  <mat-card-content>
+    <p style="color: rgb(60, 57, 57); margin: 10px 0">
+      Stock: {{ product.quantity }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <app-add-to-cart [product]="product"></app-add-to-cart>
+  </mat-card-actions>
+</mat-card>

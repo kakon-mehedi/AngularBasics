@@ -1,0 +1,12 @@
+.example-header-image {
+  background-size: cover;
+}
+
+.product-photo {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.example-card {
+  padding: 10px;
+}

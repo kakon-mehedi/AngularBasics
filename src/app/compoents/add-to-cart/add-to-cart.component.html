@@ -1,0 +1,33 @@
+<button
+  mat-raised-button
+  color="primary"
+  (click)="handleAddToCartClick()"
+  *ngIf="!showCounterButtons"
+>
+  +AddToCart
+</button>
+
+<div class="cart-counter-button" *ngIf="showCounterButtons">
+  <div class="counter-buttons">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="handleDecrementClick(product.id)"
+      [disabled]="decrementButtonDisable"
+    >
+      -
+    </button>
+    <h3>{{ item }} items in cart</h3>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="handleIncrementClick(product.id)"
+    >
+      +
+    </button>
+  </div>
+
+  <button mat-raised-button color="warn" (click)="handleRemoveClick()">
+    Remove
+  </button>
+</div>

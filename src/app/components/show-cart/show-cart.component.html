@@ -1,0 +1,23 @@
+<div class="product-list container">
+  <div class="product" *ngFor="let product of totalProducts">
+    <div class="product-details">
+      <div class="details">
+        <p>Product Name: {{ product.productInfo.productName }}</p>
+        <p>Items: {{ product.items }}</p>
+        <p>Price: {{ product.productInfo.price }}</p>
+      </div>
+
+      <div class="product-image-box">
+        <img
+          class="product-image"
+          src="{{ product.productInfo.productPhotoUrl }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+
+  <h2 class="totalPrice" *ngIf="totalPrice > 0">
+    Total Price : {{ totalPrice }} taka
+  </h2>
+</div>

@@ -1,0 +1,32 @@
+.product-list {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: antiquewhite;
+}
+
+.product {
+  border-bottom: 0.5px solid rgb(206, 198, 198);
+  margin: 30px 0;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.details {
+  padding: 20px;
+}
+
+.product-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.totalPrice {
+  text-align: right;
+  padding: 20px;
+  color: tomato;
+}
