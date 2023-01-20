@@ -4,7 +4,7 @@
       <div class="details">
         <p>Product Name: {{ product.productInfo.productName }}</p>
         <p>Items: {{ product.items }}</p>
-        <p>Price: {{ product.productInfo.price }}</p>
+        <p>Price: {{ product.productInfo.price * product.items }}</p>
       </div>
 
       <div class="product-image-box">
