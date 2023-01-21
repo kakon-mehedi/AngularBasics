@@ -1,0 +1,94 @@
+<h1 class="page-heading">Add Parking</h1>
+
+<div class="container">
+  <form
+    class="add-post"
+    [formGroup]="addParkingForm"
+    (ngSubmit)="handleSubmit()"
+  >
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Vehicle license number"
+        matInput
+        ngModel
+        formControlName="vehicleLicenseNumber"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose vehicle type</mat-label>
+      <mat-select formControlName="vehicleType">
+        <mat-option value="Microbus">Microbus</mat-option>
+        <mat-option value="Car">Car</mat-option>
+        <mat-option value="Truck">Truck</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Vehicle owner name"
+        matInput
+        ngModel
+        formControlName="vehicleOwnerName"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Vehicle owner phone"
+        matInput
+        ngModel
+        formControlName="vehicleOwnerPhone"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="in">In</mat-option>
+        <mat-option value="out">Out</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Car owner address"
+        matInput
+        ngModel
+        formControlName="carOwnerAddress"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Car entry time"
+        matInput
+        ngModel
+        formControlName="carEntryTime"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Car exit time"
+        matInput
+        ngModel
+        formControlName="carExitTime"
+        required
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>
