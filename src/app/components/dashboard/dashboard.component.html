@@ -1,1 +1,27 @@
-<p>dashboard works!</p>
+<h1 class="page-heading">Dashboard</h1>
+
+<div class="dashboard-list">
+  <div class="box">
+    <p>Total Parking Capacity: {{ totalSlot }}</p>
+  </div>
+
+  <div class="box">
+    <p>Total Car Parked : {{ totalCarParked }}</p>
+  </div>
+
+  <div class="box">
+    <p>Total Empty Slot : {{ totalSlot - totalCarParked }}</p>
+  </div>
+
+  <div class="box">
+    <p>Total Microbus : {{ totalMicrobus }}</p>
+  </div>
+
+  <div class="box">
+    <p>Total Car : {{ totalCar }}</p>
+  </div>
+
+  <div class="box">
+    <p>Total Truck : {{ totalTruck }}</p>
+  </div>
+</div>

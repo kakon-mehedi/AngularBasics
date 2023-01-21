@@ -10,9 +10,14 @@ export class ParkingService {
     this.parkingInfoFromLs.subscribe((data) => {
       this.parkingInfoSaved = data;
     });
+
+    let oldData = localStorage.getItem('parkingData');
+    if (oldData) {
+      this.parkingArr = JSON.parse(oldData);
+    }
   }
 
-  parkingArr: IparkingInfo[] = [];
+  parkingArr: any = [];
   parkingInfoSaved: any = [];
   parkingInfoFromLs = new Subject();
 
@@ -22,11 +27,14 @@ export class ParkingService {
       ...parkingInfo,
     };
 
+    let oldData = localStorage.getItem('parkingData');
+    if (oldData) {
+      this.parkingArr = JSON.parse(oldData);
+    }
+
     this.parkingArr.push(newParkingInfo);
 
     localStorage.setItem('parkingData', JSON.stringify(this.parkingArr));
-
-    this.getTotalParkingInfo();
   }
 
   getTotalParkingInfo() {
