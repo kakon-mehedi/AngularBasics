@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ParkingService } from 'src/app/service/parking.service';
 
 @Component({
@@ -10,8 +11,12 @@ import { ParkingService } from 'src/app/service/parking.service';
 export class AddParkingComponent {
   constructor(
     private fb: FormBuilder,
-    private parkingService: ParkingService
+    private parkingService: ParkingService,
+    private router: Router
   ) {}
+
+  buttonText = 'Submit';
+  buttonColor = 'primary';
 
   addParkingForm: FormGroup = this.fb.group({
     vehicleLicenseNumber: ['', [Validators.required]],
@@ -26,6 +31,17 @@ export class AddParkingComponent {
   });
 
   handleSubmit() {
-    this.parkingService.addParking(this.addParkingForm.value);
+    if (this.addParkingForm.value.carOwnerAddress) {
+      this.parkingService.addParking(this.addParkingForm.value);
+
+      this.buttonText = 'Sent';
+      this.buttonColor = 'warn';
+
+      setTimeout(() => {
+        this.router.navigate(['parkingList']);
+      }, 1000);
+    } else {
+      alert('Requird field should not be empty!');
+    }
   }
 }

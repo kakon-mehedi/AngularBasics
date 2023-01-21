@@ -1,1 +1,92 @@
-<p>edit-parking works!</p>
+<h1 class="page-heading">Edit Parking Data</h1>
+
+<div class="container">
+  <form
+    class="edit-post"
+    [formGroup]="editParkingForm"
+    (ngSubmit)="handleUpdate()"
+  >
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Vehicle license number"
+        matInput
+        formControlName="vehicleLicenseNumber"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose vehicle type</mat-label>
+      <mat-select formControlName="vehicleType">
+        <mat-option value="Microbus">Microbus</mat-option>
+        <mat-option value="Car">Car</mat-option>
+        <mat-option value="Truck">Truck</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Vehicle owner name"
+        matInput
+        formControlName="vehicleOwnerName"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Vehicle owner phone"
+        matInput
+        formControlName="vehicleOwnerPhone"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="in">In</mat-option>
+        <mat-option value="out">Out</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="Car owner address"
+        matInput
+        formControlName="carOwnerAddress"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Car entry time</mat-label>
+      <input
+        type="time"
+        placeholder="Car entry time"
+        matInput
+        formControlName="carEntryTime"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Car exit time</mat-label>
+      <input
+        type="time"
+        placeholder="Car exit time"
+        matInput
+        formControlName="carExitTime"
+        required
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="{{ buttonColor }}" type="submit">
+      {{ buttonText }}
+    </button>
+  </form>
+</div>

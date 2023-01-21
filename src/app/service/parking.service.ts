@@ -48,4 +48,21 @@ export class ParkingService {
 
     this.parkingInfoFromLs.next(parkingInfos);
   }
+
+  findCurrentParking(id: number) {
+    let currentParking = this.parkingArr.filter((data: any) => data.id === id);
+    return currentParking[0];
+  }
+
+  updateParking(currentParking: any) {
+    this.parkingArr = this.parkingArr.map((data: any) => {
+      if (data.id == currentParking.id) {
+        return currentParking;
+      } else return data;
+    });
+
+    console.log(this.parkingArr);
+
+    localStorage.setItem('parkingData', JSON.stringify(this.parkingArr));
+  }
 }
