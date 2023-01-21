@@ -22,9 +22,12 @@ export class ParkingService {
   parkingInfoFromLs = new Subject();
 
   addParking(parkingInfo: IparkingInfo) {
+    let currentDate = new Date();
+
     let newParkingInfo = {
       id: this.parkingArr.length + 1,
       ...parkingInfo,
+      date: currentDate,
     };
 
     let oldData = localStorage.getItem('parkingData');

@@ -12,6 +12,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ParkingListComponent } from './components/parking-list/parking-list.component';
 import { MaterialModule } from './modules/material/material.module';
 import { HomeComponent } from './pages/home/home.component';
+import { EditParkingComponent } from './components/edit-parking/edit-parking.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
     DashboardComponent,
     AddParkingComponent,
     ParkingListComponent,
+    EditParkingComponent,
   ],
   imports: [
     BrowserModule,

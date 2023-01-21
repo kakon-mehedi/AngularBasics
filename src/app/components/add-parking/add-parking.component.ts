@@ -8,16 +8,6 @@ import { ParkingService } from 'src/app/service/parking.service';
   styleUrls: ['./add-parking.component.css'],
 })
 export class AddParkingComponent {
-  // vehicleLicenseNumber = '';
-  // vehicleType = '';
-  // vehicleOwnerName = '';
-  // vehicleOwnerPhone = '';
-  // status = '';
-  // carOwnerAddress = '';
-  // carEntryTime = '';
-  // carExitTime = '';
-  // parkingCharge = '';
-
   constructor(
     private fb: FormBuilder,
     private parkingService: ParkingService

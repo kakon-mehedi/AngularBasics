@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddParkingComponent } from './components/add-parking/add-parking.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EditParkingComponent } from './components/edit-parking/edit-parking.component';
 import { ParkingListComponent } from './components/parking-list/parking-list.component';
 import { HomeComponent } from './pages/home/home.component';
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'addParking', component: AddParkingComponent },
   { path: 'parkingList', component: ParkingListComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'parking/:id', component: EditParkingComponent },
 ];
 
 @NgModule({
