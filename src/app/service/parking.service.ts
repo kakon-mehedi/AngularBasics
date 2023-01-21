@@ -15,6 +15,8 @@ export class ParkingService {
       ...parkingInfo,
     };
 
-    console.log(newParkingInfo);
+    this.parkingArr.push(newParkingInfo);
+
+    localStorage.setItem('parkingData', JSON.stringify(this.parkingArr));
   }
 }
