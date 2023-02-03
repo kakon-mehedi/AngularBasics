@@ -1,32 +1,70 @@
-<select name="" #childData (change)="handleClassTypeChange(childData.value)">
-  <option value="">Number of child</option>
-  <option value="{{ number.id }}" *ngFor="let number of numberOfChild">
-    {{ number.text }}
-  </option>
-</select>
+<div class="select-list">
+  <div class="mesh" [ngStyle]="{ 'background-color': caseColor }">kakon</div>
+  <p class="heading">AV Price calculator</p>
+  <div class="filter-box">
+    <div class="select-item">
+      <mat-form-field appearance="fill">
+        <mat-label value="">Number of child</mat-label>
+        <mat-select
+          name=""
+          #childData
+          (selectionChange)="handleClassTypeChange(childData.value)"
+        >
+          <mat-option
+            value="{{ number.id }}"
+            *ngFor="let number of numberOfChild"
+          >
+            {{ number.text }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-<select
-  #classSelect
-  name=""
-  (change)="handleClassPerWeekChange(classSelect.value)"
->
-  <option value="">Class per week</option>
-  <option *ngFor="let classInfo of classPerWeek">
-    {{ classInfo.numberOfClass }}
-  </option>
-</select>
+    <div class="select-item">
+      <mat-form-field appearance="fill">
+        <mat-label>Class per week</mat-label>
+        <mat-select
+          #classSelect
+          name=""
+          (selectionChange)="handleClassPerWeekChange(classSelect.value)"
+        >
+          <mat-option
+            value="{{ classInfo.numberOfClass }}"
+            *ngFor="let classInfo of classPerWeek"
+          >
+            {{ classInfo.numberOfClass }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-<select #caseSelect name="" (change)="handleCaseChange(caseSelect.value)">
-  <option value="">Select Case</option>
-  <option *ngFor="let case of noOfCases">
-    {{ case.caseId }}
-  </option>
-</select>
-
-<div class="price-box" *ngIf="selectedPrice">
-  <div class="title">
-    Pricing for {{ selectedChildId }}, {{ selectedClassPerWeek }} class per week
+    <div class="select-item">
+      <mat-form-field appearance="fill">
+        <mat-label>Select Case</mat-label>
+        <mat-select
+          #caseSelect
+          name=""
+          (selectionChange)="handleCaseChange(caseSelect.value)"
+        >
+          <mat-option *ngFor="let case of noOfCases" value="{{ case.caseId }}">
+            {{ case.caseId }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
+  <div class="price-box" *ngIf="selectedPrice">
+    <div class="tag-list">
+      <div class="tag-item">Pricing for</div>
+      <div class="tag-item">{{ selectedChildId }}</div>
+      <div class="tag-item">{{ selectedClassPerWeek }} class per week</div>
+      <div class="tag-item" [ngStyle]="{ 'background-color': caseColor }">
+        {{ selectedCase }} case
+      </div>
+    </div>
 
-  <p>Price is {{ selectedPrice.priceAmount }} USD</p>
+    <div class="price" [ngStyle]="{ 'background-color': caseColor }">
+      {{ selectedPrice.priceAmount }} USD
+    </div>
+  </div>
 </div>

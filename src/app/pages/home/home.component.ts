@@ -18,12 +18,25 @@ export class HomeComponent {
 
   classPerWeek: any;
   noOfCases: any;
+  caseColor = '';
 
   handleClassTypeChange(selectedChildId: any) {
-    this.resetOptions();
+    console.log('changes occurd');
     this.selectedChildId = selectedChildId;
     this.noOfCases = [];
 
+    if (this.classPerWeek && this.selectedCase) {
+      this.showCaseOptions();
+      this.calculatePrice();
+    } else if (this.classPerWeek) {
+      this.resetOptions();
+      this.showCaseOptions();
+    } else {
+      this.showClassPerWeekOption();
+    }
+  }
+
+  showClassPerWeekOption() {
     this.classPerWeek = this.dataService.classPerWeek.filter(
       (classInfo: any) => {
         if (classInfo.id === this.selectedChildId) {
@@ -39,14 +52,13 @@ export class HomeComponent {
     if (this.selectedCase) {
       this.calculatePrice();
     } else {
-      this.showCase(this.selectedChildId);
+      this.showCaseOptions();
     }
   }
 
-  showCase(childInfoId: any) {
-    this.selectedCase = childInfoId;
+  showCaseOptions() {
     this.noOfCases = this.dataService.case.filter(
-      (data) => data.id === this.selectedCase
+      (data) => data.id === this.selectedChildId
     );
   }
 
@@ -56,6 +68,8 @@ export class HomeComponent {
   }
 
   calculatePrice() {
+    this.setCaseColor();
+
     this.selectedPrice = this.dataService.price.filter((price: any) => {
       if (
         price.id == this.selectedChildId &&
@@ -69,10 +83,21 @@ export class HomeComponent {
     this.selectedPrice = this.selectedPrice[0];
   }
 
+  setCaseColor() {
+    if (this.selectedCase === 'best') {
+      this.caseColor = 'green';
+    } else if (this.selectedCase === 'optimal') {
+      this.caseColor = 'orange';
+    } else {
+      this.caseColor = 'red';
+    }
+  }
+
   resetOptions() {
-    this.selectedChildId = '';
-    this.selectedClassPerWeek = '';
+    console.log('resetWorks');
     this.selectedCase = '';
     this.selectedPrice = '';
+
+    this.showClassPerWeekOption();
   }
 }
