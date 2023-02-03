@@ -1,1 +1,32 @@
-<p>home works!</p>
+<select name="" #childData (change)="handleClassTypeChange(childData.value)">
+  <option value="">Number of child</option>
+  <option value="{{ number.id }}" *ngFor="let number of numberOfChild">
+    {{ number.text }}
+  </option>
+</select>
+
+<select
+  #classSelect
+  name=""
+  (change)="handleClassPerWeekChange(classSelect.value)"
+>
+  <option value="">Class per week</option>
+  <option *ngFor="let classInfo of classPerWeek">
+    {{ classInfo.numberOfClass }}
+  </option>
+</select>
+
+<select #caseSelect name="" (change)="handleCaseChange(caseSelect.value)">
+  <option value="">Select Case</option>
+  <option *ngFor="let case of noOfCases">
+    {{ case.caseId }}
+  </option>
+</select>
+
+<div class="price-box" *ngIf="selectedPrice">
+  <div class="title">
+    Pricing for {{ selectedChildId }}, {{ selectedClassPerWeek }} class per week
+  </div>
+
+  <p>Price is {{ selectedPrice.priceAmount }} USD</p>
+</div>
