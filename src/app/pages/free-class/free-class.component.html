@@ -1,1 +1,105 @@
-<p>free-class works!</p>
+<h1 class="page-heading">Get Free Classes</h1>
+
+<div class="container">
+  <mat-stepper #stepper>
+    <mat-step [stepControl]="freeClassFormGroup" color="accent">
+      <form [formGroup]="freeClassFormGroup">
+        <ng-template matStepLabel>Parent Information</ng-template>
+        <div class="free-class-form-inputs">
+          <mat-form-field appearance="fill">
+            <mat-label>Parent Name</mat-label>
+            <input matInput formControlName="parentName" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="parentEmail" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button color="accent" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step
+      [stepControl]="freeClassFormGroup"
+      label="Child Information"
+      color="accent"
+    >
+      <form [formGroup]="freeClassFormGroup">
+        <div class="free-class-form-inputs">
+          <mat-form-field appearance="fill">
+            <mat-label>Your child name</mat-label>
+            <input matInput formControlName="childName" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Your child age</mat-label>
+            <input matInput formControlName="childAge" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="accent" matStepperNext class="ml-5">
+            Next
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step
+      [stepControl]="freeClassFormGroup"
+      label="Pick Date"
+      color="accent"
+    >
+      <form [formGroup]="freeClassFormGroup">
+        <div class="free-class-form-inputs">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input
+              matInput
+              [min]="minDate"
+              [max]="maxDate"
+              [matDatepicker]="picker"
+              formControlName="classDate"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Time</mat-label>
+            <input matInput formControlName="classTime" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="accent" matStepperNext class="ml-5">
+            Next
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step color="accent">
+      <ng-template matStepLabel>Finish</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="handleSubmit()"
+          class="ml-5"
+        >
+          Confrim Free Class
+        </button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

@@ -1,0 +1,17 @@
+.free-class-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.free-class-form-inputs {
+  display: flex;
+  flex-direction: column;
+}

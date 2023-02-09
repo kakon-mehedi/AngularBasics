@@ -25,12 +25,7 @@
   color: white;
   border-radius: 30px;
   position: relative;
-
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(45deg, purple, orange) border-box;
-  border: 5px solid transparent;
-  border-radius: 50px;
-  padding: 10px 20px;
+  border: 1px solid orange;
 }
 
 .hero-button:hover {
@@ -66,6 +61,7 @@
   justify-content: space-around;
   padding: 30px 0;
   margin-top: -60px;
+  color: white;
 }
 
 .subtitle {
@@ -94,11 +90,8 @@
 }
 
 .gradient-border {
+  background-color: orange;
   color: white;
-
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(45deg, purple, orange) border-box;
-  border: 5px solid transparent;
-  border-radius: 50px;
   padding: 10px 20px;
+  border-radius: 20px;
 }
