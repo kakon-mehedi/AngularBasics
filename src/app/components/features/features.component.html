@@ -1,0 +1,18 @@
+<mat-stepper orientation="vertical">
+  <mat-step *ngFor="let feature of features; index as indexNumber">
+    <ng-template matStepLabel>{{ feature.featureName }}</ng-template>
+    <ng-template matStepContent>
+      <app-benefits [currentFeature]="feature"></app-benefits>
+      <button
+        mat-button
+        matStepperNext
+        *ngIf="indexNumber < features.length - 1"
+      >
+        Next
+      </button>
+      <button mat-button matStepperPrevious *ngIf="indexNumber > 0">
+        Back
+      </button>
+    </ng-template>
+  </mat-step>
+</mat-stepper>

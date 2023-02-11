@@ -14,6 +14,9 @@ import { FreeClassComponent } from './pages/free-class/free-class.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BenefitsComponent } from './components/benefits/benefits.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { ReviewsComponent } from './pages/reviews/reviews.component';
     NotFoundComponent,
     MembershipComponent,
     ReviewsComponent,
+    FeaturesComponent,
+    FooterComponent,
+    BenefitsComponent,
   ],
   imports: [
     BrowserModule,

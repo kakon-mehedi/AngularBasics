@@ -1,3 +1,13 @@
 .navigation-bar {
   height: 60px;
 }
+
+.page-content {
+  min-height: 80vh;
+}
+
+.footer {
+  margin-top: 50px;
+  width: 100%;
+  z-index: 20;
+}

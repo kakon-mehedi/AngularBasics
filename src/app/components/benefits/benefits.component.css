@@ -1,0 +1,33 @@
+.benefits-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-item {
+  padding: 5px 10px;
+  margin: 5px;
+  line-height: 1.5;
+  background-color: rgb(223, 254, 227);
+}
+
+.right {
+  flex: 1;
+}
+
+.feature-image-box {
+  margin: 20px;
+}
+
+.feature-image {
+  height: 300px;
+  width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
