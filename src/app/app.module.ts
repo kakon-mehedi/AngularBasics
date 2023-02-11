@@ -17,6 +17,7 @@ import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
+import { HeroVideoComponent } from './popups/hero-video/hero-video.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BenefitsComponent } from './components/benefits/benefits.component';
     FeaturesComponent,
     FooterComponent,
     BenefitsComponent,
+    HeroVideoComponent,
   ],
   imports: [
     BrowserModule,

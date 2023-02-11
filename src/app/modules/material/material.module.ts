@@ -7,9 +7,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
+
 const MaterialComponents = [
   MatButtonModule,
   MatIconModule,
@@ -20,6 +22,7 @@ const MaterialComponents = [
   MatStepperModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatDialogModule,
 ];
 
 @NgModule({
