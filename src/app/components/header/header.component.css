@@ -60,7 +60,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 30px 0;
-  margin-top: -60px;
+  margin-top: -100px;
   color: white;
   gap: 20px;
 }
@@ -95,4 +95,26 @@
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
+}
+
+@media (max-width: 641px) {
+  .header-section {
+    min-height: 400px;
+  }
+  .title {
+    font-size: 1.5rem;
+    width: 90%;
+  }
+
+  .hero-button {
+    font-size: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .rating {
+    font-size: 0.9rem;
+  }
 }

@@ -18,6 +18,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { HeroVideoComponent } from './popups/hero-video/hero-video.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HeroVideoComponent } from './popups/hero-video/hero-video.component';
     FooterComponent,
     BenefitsComponent,
     HeroVideoComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

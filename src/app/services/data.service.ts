@@ -112,4 +112,54 @@ export class DataService {
         'Our children got featured as well in the national newspaper for sharing their Bangla learning success stories',
     },
   ];
+
+  tribiute = [
+    {
+      id: 1,
+      title: 'This is How They Tribute!',
+      description:
+        'Children leanring Bangla in Tinkers AmarVasha from the USA sing a tribute to the Language Heroes.',
+      videoLink: 'https://youtube.com/embed/cvf6xauDPZ0',
+    },
+
+    {
+      id: 2,
+      title: 'Parents Still Love Bengali',
+      description:
+        'Living outside of our country doesn’t mean I forgot my root. I can feel the warmth of my country when I teach, speak, and sing in Bangla with my son and daughter. And I bet every parent will feel the same. That’s what our parents think!',
+      videoLink: 'https://youtube.com/embed/uJGd0Fd2Xyw',
+    },
+
+    {
+      id: 3,
+      title: 'Neiloy Can Count 1-20 in Bangla Now!',
+      description:
+        'Niloy can now count in Bangla! In tinkers AmarVasha childreen are re-discovering the fun of learning Bangla',
+      videoLink: 'https://youtube.com/embed/DzbT39P2tXk',
+    },
+
+    {
+      id: 3,
+      title: 'Ammu Ke Bhalobashi',
+      description:
+        'This is Sofia. She lives in McAllen, Texas, with her parents. She created a card for her mother and wrote a message in Bangla in the Card – “Ammu Ke Bhalobasi”.',
+      videoLink: 'https://youtube.com/embed/F6fBr23E-M8',
+    },
+
+    {
+      id: 4,
+      title: 'We Let Kids Be Their Self',
+      description:
+        'Every child is unique. The way they think is unique. Their creativity is unique. We just ask them to do things, and they do it their way!',
+      videoLink: 'https://youtube.com/embed/n8yLX-NxP6s',
+    },
+
+    {
+      id: 5,
+      title: 'Peer Learning is Fun too!',
+      description:
+        'Peer learning provides the space to learn with collaboration and fun. The learning rate is achived much higher in peer learning classes. Our peer classes are very much fun and attractive too.',
+      videoLink: 'https://youtube.com/embed/3rvxo_iw7a4',
+    },
+  ];
 }

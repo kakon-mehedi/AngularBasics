@@ -1,0 +1,78 @@
+.review-section {
+  min-height: 60vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: rgb(246, 234, 234);
+  align-items: center;
+  padding: 30px;
+}
+
+.left {
+  flex: 1;
+}
+
+.review-cta {
+  margin: 30px 0;
+}
+.title {
+  font-weight: 300;
+  text-align: justify;
+  width: 80%;
+  font-size: 1.5rem;
+}
+
+.right {
+  flex: 1;
+}
+
+iframe {
+  width: 100%;
+  min-height: 350px;
+}
+
+.tribute-section {
+  background-color: whitesmoke;
+}
+.tribute-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 20px 0;
+}
+
+.card {
+  padding: 20px;
+}
+
+.description {
+  font-size: 1rem;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.tribute-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 641px) {
+  .title {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .tribute-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .tribute-title {
+    text-align: center;
+  }
+
+  .description {
+    text-align: justify;
+  }
+}

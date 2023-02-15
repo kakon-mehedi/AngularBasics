@@ -1,5 +1,8 @@
 .navigation-bar {
-  height: 60px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .page-content {

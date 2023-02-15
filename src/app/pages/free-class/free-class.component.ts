@@ -28,6 +28,8 @@ export class FreeClassComponent {
   minDate: Date;
   maxDate: Date;
 
+  formInputedValue: any = {};
+
   freeClassFormGroup = this.fb.group({
     parentName: ['', Validators.required],
     parentEmail: ['', Validators.required],
@@ -37,7 +39,9 @@ export class FreeClassComponent {
     classTime: ['', Validators.required],
   });
 
-  handleSubmit() {
-    console.log(this.freeClassFormGroup.value);
+  showInputData() {
+    this.formInputedValue = this.freeClassFormGroup.value;
   }
+
+  handleSubmit() {}
 }

@@ -1,1 +1,54 @@
-<p>reviews works!</p>
+<div class="review-section">
+  <div class="left">
+    <p class="title">
+      We always value our parents feedback and try to update our service
+      according to their feedback. Take a look what our paretns says about our
+      service.
+    </p>
+
+    <button
+      mat-raised-button
+      color="accent"
+      class="review-cta"
+      routerLink="/freeclass"
+    >
+      Get Free Class
+    </button>
+  </div>
+  <div class="right">
+    <div class="review-video">
+      <iframe
+        src="https://www.youtube.com/embed/kdCiAntYrOY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="tribute-section">
+  <div class="tribute-title">Watch our students tribiute</div>
+
+  <div class="tribute-list">
+    <mat-card class="card" *ngFor="let tribiute of tribiutesArr">
+      <mat-card-header>
+        <mat-card-title class="card-title">{{ tribiute.title }}</mat-card-title>
+        <mat-card-subtitle class="description">{{
+          tribiute.description
+        }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <iframe
+          [src]="tribiute.videoLink | safe"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
