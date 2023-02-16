@@ -147,6 +147,7 @@
           color="{{ submitButtonColor }}"
           (click)="handleSubmit($event)"
           class="ml-5"
+          [disabled]="isInvalidForm"
         >
           {{ submitButtonText }}
         </button>

@@ -31,6 +31,8 @@ export class FreeClassComponent {
   submitButtonText = 'Confirm Free Class';
   submitButtonColor = 'accent';
 
+  isInvalidForm = false;
+
   formInputedValue: any = {};
 
   freeClassFormGroup = this.fb.group({
@@ -56,8 +58,6 @@ export class FreeClassComponent {
 
     return errorMessage;
   }
-
-  isFormValid = this.freeClassFormGroup.valid;
 
   showInputData() {
     this.formInputedValue = this.freeClassFormGroup.value;
