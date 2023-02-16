@@ -19,6 +19,19 @@
   flex-direction: column;
 }
 
+.input-list {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.form-inputed-value {
+  background-color: aliceblue;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
 @media (max-width: 641px) {
   .container {
     width: 100%;

@@ -48,8 +48,31 @@ export class DataService {
   benefits = [
     {
       featureId: 1,
-      benefitDetails:
-        'In tinkers, we believe learning should be interactive and fun. Amra bacchader physiology bujhe tar jei topic valo lage sei topic onujayi personalzed content diye bangla shekhai so that learning ta tar kache fun & engaging hoy',
+      benefitDetails: 'Personalized attention',
+    },
+
+    {
+      featureId: 1,
+      benefitDetails: 'Interactive learning',
+    },
+    {
+      featureId: 1,
+      benefitDetails: 'Flexibility',
+    },
+
+    {
+      featureId: 1,
+      benefitDetails: 'Improved learning outcomes',
+    },
+
+    {
+      featureId: 1,
+      benefitDetails: 'Customized curriculum',
+    },
+
+    {
+      featureId: 1,
+      benefitDetails: 'Increased motivation',
     },
 
     {
@@ -57,7 +80,7 @@ export class DataService {
       benefitDetails: "Your child's visual Progress Report",
     },
 
-    { featureId: 2, benefitDetails: 'Before and After email. ' },
+    { featureId: 2, benefitDetails: 'Before and After class email. ' },
 
     { featureId: 2, benefitDetails: 'Learning outcome after every class. ' },
 

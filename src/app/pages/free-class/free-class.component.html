@@ -13,7 +13,16 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Email Address</mat-label>
-            <input matInput formControlName="parentEmail" required />
+            <input
+              matInput
+              formControlName="parentEmail"
+              type="email"
+              ngModel
+              email
+            />
+            <mat-error *ngIf="emailError">
+              {{ emailError }}
+            </mat-error>
           </mat-form-field>
         </div>
         <div>
@@ -74,7 +83,12 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Time</mat-label>
-            <input matInput formControlName="classTime" required />
+            <input
+              matInput
+              formControlName="classTime"
+              placeholder="Ex. 08:30 am"
+              required
+            />
           </mat-form-field>
         </div>
         <div>
@@ -94,20 +108,47 @@
 
     <mat-step color="accent">
       <ng-template matStepLabel>Finish</ng-template>
-      <p>You are now done.</p>
-      <p>{{ formInputedValue.parentName }}</p>
-      <p>{{ formInputedValue.childName }}</p>
-      <p>{{ formInputedValue.childAge }}</p>
-      <p>{{ formInputedValue.classDate }}</p>
+      <p>
+        You are now done. Please click the
+        <strong>confirm Free Class</strong> button to confirm your free class
+        slot.
+      </p>
+
+      <div class="input-list">
+        <p class="form-inputed-value">
+          <strong>Parent Name : </strong> {{ formInputedValue.parentName }}
+        </p>
+
+        <p class="form-inputed-value">
+          <strong>Parent Email : </strong> {{ formInputedValue.parentEmail }}
+        </p>
+
+        <p class="form-inputed-value">
+          <strong>Child Name : </strong> {{ formInputedValue.childName }}
+        </p>
+
+        <p class="form-inputed-value">
+          <strong>Child Age : </strong> {{ formInputedValue.childAge }}
+        </p>
+
+        <p class="form-inputed-value">
+          <strong>Class Date : </strong> {{ formInputedValue.classDate }}
+        </p>
+
+        <p class="form-inputed-value">
+          <strong>Class Time : </strong> {{ formInputedValue.classTime }}
+        </p>
+      </div>
+
       <div>
         <button mat-raised-button matStepperPrevious>Back</button>
         <button
           mat-raised-button
-          color="accent"
-          (click)="handleSubmit()"
+          color="{{ submitButtonColor }}"
+          (click)="handleSubmit($event)"
           class="ml-5"
         >
-          Confrim Free Class
+          {{ submitButtonText }}
         </button>
       </div>
     </mat-step>
