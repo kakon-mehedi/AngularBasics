@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BenefitsComponent } from './components/benefits/benefits.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MembershipComponent } from './components/membership/membership.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -14,11 +18,8 @@ import { FreeClassComponent } from './pages/free-class/free-class.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
-import { FeaturesComponent } from './components/features/features.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { BenefitsComponent } from './components/benefits/benefits.component';
-import { HeroVideoComponent } from './popups/hero-video/hero-video.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { HeroVideoComponent } from './popups/hero-video/hero-video.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SafePipe } from './pipes/safe.pipe';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

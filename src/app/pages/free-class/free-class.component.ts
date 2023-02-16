@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { emailJsInfos } from 'src/app/components/configuration/config';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-free-class',
@@ -9,7 +10,7 @@ import { emailJsInfos } from 'src/app/components/configuration/config';
   styleUrls: ['./free-class.component.css'],
 })
 export class FreeClassComponent {
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private apiService: ApiService) {
     //disable previous date before today as a min date
     this.minDate = new Date();
 
@@ -63,9 +64,12 @@ export class FreeClassComponent {
     this.formInputedValue = this.freeClassFormGroup.value;
   }
 
-  handleSubmit(e: Event) {
-    e.preventDefault();
+  handleSubmit() {
+    this.apiService.postData(this.freeClassFormGroup.value);
+    this.sendEmail();
+  }
 
+  sendEmail() {
     this.submitButtonText = 'Sending...';
     this.submitButtonColor = 'warn';
     emailjs
