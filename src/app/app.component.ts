@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Hello Angular';
 
-  showOwnerName = () => {
-    return 'Kakon Mehedi';
-  };
+  showName(name: string) {
+    console.log(name);
+  }
 }
