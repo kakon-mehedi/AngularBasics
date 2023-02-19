@@ -21,19 +21,21 @@ export class FreeClassComponent {
       this.currentDate + 21
     );
   }
+
+  ngOnInit() {}
+
   date = new Date();
   currentYear = this.date.getFullYear();
   currentMonth = this.date.getMonth();
   currentDate = this.date.getDate();
-
   minDate: Date;
   maxDate: Date;
+  siteKey = '6LcMG5UkAAAAAJJ9LetpyfpOFAU2MOAs2oMjMMFY';
 
   submitButtonText = 'Confirm Free Class';
   submitButtonColor = 'accent';
 
   isInvalidForm = false;
-
   formInputedValue: any = {};
 
   freeClassFormGroup = this.fb.group({
@@ -43,6 +45,7 @@ export class FreeClassComponent {
     childAge: ['', Validators.required],
     classDate: ['', Validators.required],
     classTime: ['', Validators.required],
+    recaptcha: ['', Validators.required],
   });
 
   get emailError() {

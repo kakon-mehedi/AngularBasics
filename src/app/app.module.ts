@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { NgxCaptchaModule } from 'ngx-captcha';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
@@ -45,7 +48,10 @@ import { HeroVideoComponent } from './popups/hero-video/hero-video.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCaptchaModule,
     HttpClientModule,
+    LoadingBarModule,
+    LoadingBarRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

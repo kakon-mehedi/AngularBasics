@@ -25,6 +25,13 @@
             </mat-error>
           </mat-form-field>
         </div>
+        <ngx-recaptcha2
+          #captchaElem
+          [siteKey]="siteKey"
+          [useGlobalDomain]="false"
+          formControlName="recaptcha"
+        >
+        </ngx-recaptcha2>
         <div>
           <button mat-raised-button color="accent" matStepperNext>Next</button>
         </div>
@@ -91,6 +98,7 @@
             />
           </mat-form-field>
         </div>
+
         <div>
           <button mat-raised-button matStepperPrevious>Back</button>
           <button
