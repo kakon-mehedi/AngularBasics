@@ -1,0 +1,16 @@
+<p>product works!</p>
+
+<button (click)="onFetchData()">Fetch Data</button>
+
+<div class="post-list" *ngIf="!isLoading">
+  <div class="post-item" *ngFor="let post of requestArr">
+    <div class="single-post">{{ post.parentName }}</div>
+    <div class="single-post">{{ post.parentEmail }}</div>
+    <div class="single-post">{{ post.childName }}</div>
+    <div class="single-post">{{ post.childAge }}</div>
+  </div>
+</div>
+
+<div class="loading-spinner" *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
