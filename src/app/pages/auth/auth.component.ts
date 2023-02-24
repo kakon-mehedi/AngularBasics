@@ -14,6 +14,7 @@ export class AuthComponent {
 
   isLoginMode = false;
   isLoading = false;
+  isRequestSuccessful = false;
   errorMessage: string = '';
 
   authForm: FormGroup = this.fb.group({
@@ -48,6 +49,14 @@ export class AuthComponent {
       error: (error) => {
         this.errorMessage = error;
         this.isLoading = false;
+      },
+      complete: () => {
+        this.errorMessage = '';
+        this.isRequestSuccessful = true;
+        setTimeout(() => {
+          this.isRequestSuccessful = false;
+          this.authForm.reset();
+        }, 3000);
       },
     });
   }

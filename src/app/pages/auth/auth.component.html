@@ -1,5 +1,10 @@
 <p class="page-heading">{{ isLoginMode ? "Log In" : "Sign Up" }}</p>
-<p class="error-message container" *ngIf="errorMessage">{{ errorMessage }}</p>
+<p class="error message container" *ngIf="errorMessage">
+  {{ errorMessage }}
+</p>
+<p class="signup-success message container" *ngIf="isRequestSuccessful">
+  Request Successful!
+</p>
 
 <div class="container">
   <div class="conatiner loading-bar">
@@ -8,7 +13,7 @@
   <form
     [formGroup]="authForm"
     (ngSubmit)="onAuthFormSubmit()"
-    *ngIf="!isLoading"
+    *ngIf="!isLoading && !isRequestSuccessful"
   >
     <div class="auth-form">
       <mat-form-field appearance="fill">
@@ -28,7 +33,7 @@
           minlength="6"
         />
         <mat-error *ngIf="authForm.get('password')?.touched"
-          >Password is requird</mat-error
+          >Password is requird & minimum length 6 characters</mat-error
         >
       </mat-form-field>
     </div>
