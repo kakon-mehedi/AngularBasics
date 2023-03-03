@@ -34,7 +34,7 @@ export class ErrorService {
   handleError(err: HttpErrorResponse) {
     if (!err.error || !err.error.error) {
       return throwError(
-        () => 'UNKNOWN Error or Your Internet connection is lost!'
+        () => 'Unknown rrror or Your internet connection is lost!'
       );
     } else {
       const currentErrorMsg = err.error.error.message;

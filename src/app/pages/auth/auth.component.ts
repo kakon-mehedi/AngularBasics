@@ -12,10 +12,11 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AuthComponent {
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 
-  isLoginMode = false;
+  isLoginMode = true;
   isLoading = false;
   isRequestSuccessful = false;
   errorMessage: string = '';
+  buttonText: string = '';
 
   authForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -24,6 +25,12 @@ export class AuthComponent {
 
   onModeChange() {
     this.isLoginMode = !this.isLoginMode;
+
+    if (this.isLoginMode) {
+      this.authService.buttonText.next('Log In');
+    } else {
+      this.authService.buttonText.next('Sign Up');
+    }
   }
 
   onAuthFormSubmit() {
@@ -43,7 +50,6 @@ export class AuthComponent {
 
     authObservable.subscribe({
       next: (response) => {
-        console.log(response);
         this.isLoading = false;
       },
       error: (error) => {
@@ -58,6 +64,12 @@ export class AuthComponent {
           this.authForm.reset();
         }, 3000);
       },
+    });
+  }
+
+  ngOnInit() {
+    this.authService.buttonText.subscribe((buttonText) => {
+      this.buttonText = buttonText;
     });
   }
 }
