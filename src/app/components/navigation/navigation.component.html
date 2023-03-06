@@ -1,7 +1,20 @@
 <mat-toolbar color="primary">
   <button mat-raised-button color="primary" routerLink="/">AuthApp</button>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="primary" routerLink="auth">
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="auth"
+    *ngIf="!isLoggedIn"
+  >
     {{ buttonText }}
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    *ngIf="isLoggedIn"
+    (click)="onLogOut()"
+  >
+    Logout
   </button>
 </mat-toolbar>

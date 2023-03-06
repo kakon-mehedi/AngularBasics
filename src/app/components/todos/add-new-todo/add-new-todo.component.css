@@ -1,0 +1,12 @@
+.add-todo {
+  height: 90px;
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-spinner {
+  text-align: center;
+}

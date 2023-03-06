@@ -1,0 +1,17 @@
+<div class="add-todo">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Your todo" #todoInput />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onAddTodo(todoInput.value)"
+  >
+    {{ isLoading ? "Sending..." : "Add Todo" }}
+  </button>
+</div>
+
+<div class="show-spinner" *ngIf="isLoading">
+  <app-loading-spiner></app-loading-spiner>
+</div>

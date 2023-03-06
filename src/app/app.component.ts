@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Hello Angular';
+  constructor(private authService: AuthService) {}
 
-  showOwnerName = () => {
-    return 'Kakon Mehedi';
-  };
+  ngOnInit() {
+    this.authService.autoSignIn();
+  }
 }

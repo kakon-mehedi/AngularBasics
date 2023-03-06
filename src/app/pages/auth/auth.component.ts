@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthResponse } from 'src/app/appInterface/auth-response.interface';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,7 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./auth.component.css'],
 })
 export class AuthComponent {
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   isLoginMode = true;
   isLoading = false;
@@ -51,6 +56,7 @@ export class AuthComponent {
     authObservable.subscribe({
       next: (response) => {
         this.isLoading = false;
+        this.router.navigate(['/']);
       },
       error: (error) => {
         this.errorMessage = error;
