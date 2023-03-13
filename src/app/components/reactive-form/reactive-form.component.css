@@ -1,0 +1,11 @@
+input {
+  padding: 10px;
+  margin: 5px;
+}
+
+.reactive-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
