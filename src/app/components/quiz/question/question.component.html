@@ -1,27 +1,49 @@
-<div class="quiz-section">
-  <input type="text" placeholder="Question?" class="option question" />
+<div>Value: {{ addQuestionForm.value | json }}</div>
 
-  <div class="option-list">
-    <div class="option-box">
-      <input type="checkbox" checked class="checkbox" />
-      <input type="text" class="option" placeholder="Option A" />
-    </div>
-
-    <div class="option-box">
-      <input type="checkbox" class="checkbox" />
-      <input type="text" class="option" placeholder="Option B" />
-    </div>
-
-    <div class="option-box">
-      <input type="checkbox" class="checkbox" />
-      <input type="text" class="option" placeholder="Option C" />
-    </div>
-
-    <div class="option-box">
-      <input type="checkbox" class="checkbox" />
-      <input type="text" class="option" placeholder="Option D" />
-    </div>
+<form [formGroup]="addQuestionForm" (submit)="onAddQuestionSubmit()">
+  <div class="add-new-button">
+    <button mat-raised-button color="primary" (click)="onAddNew()">
+      + Add new
+    </button>
   </div>
+  <div class="quiz-section">
+    <input
+      type="text"
+      placeholder="Question?"
+      class="option question"
+      formControlName="question"
+    />
 
-  <input type="text" placeholder="Details" class="option details" />
-</div>
+    <input
+      type="text"
+      placeholder="image url"
+      class="option question"
+      formControlName="image"
+    />
+
+    <div class="option-list" formArrayName="options">
+      <div
+        class="option-box"
+        *ngFor="let option of optionsArray.controls; index as i"
+        formGroupName="{{ i }}"
+      >
+        <input
+          type="checkbox"
+          checked
+          class="checkbox"
+          formControlName="isAnswer"
+        />
+        <input
+          type="text"
+          class="option"
+          placeholder=" Option {{
+            i === 0 ? 'A' : i === 1 ? 'B' : i === 2 ? 'C' : 'D'
+          }}"
+          formControlName="option"
+        />
+      </div>
+    </div>
+
+    <input type="text" placeholder="Details" class="option details" />
+  </div>
+</form>
