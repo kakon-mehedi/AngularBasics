@@ -47,7 +47,7 @@ export class QuestionComponent {
       isAnswer: ['', []],
     });
 
-    this.optionsArray.push(newQuestion);
+    //this.optionsArray.push(newQuestion);
   }
 
   onAddQuestionSubmit() {
