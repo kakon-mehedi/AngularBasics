@@ -1,10 +1,41 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
-  <button mat-raised-button color="accent" routerLink="home">Home</button>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-raised-button color="primary" routerLink="home">Home</button>
   <span class="nav-spacer"></span>
 
-  <button mat-raised-button color="accent" routerLink="quiz" class="ml-5">
-    Quiz
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="quiz"
+    class="ml-5"
+    *ngIf="isLoggedIn"
+  >
+    + Add quiz
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="auth"
+    class="ml-5"
+    *ngIf="!isLoggedIn"
+  >
+    Sign in
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="ml-5"
+    (click)="onSignOut()"
+    *ngIf="isLoggedIn"
+  >
+    Sign out
   </button>
 </mat-toolbar>
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="isLoading"
+  class="progressbar"
+></mat-progress-bar>
 
 <router-outlet></router-outlet>

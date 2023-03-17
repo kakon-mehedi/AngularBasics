@@ -8,49 +8,86 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class QuestionComponent {
   constructor(private fb: FormBuilder) {}
+
   addQuestionForm: FormGroup = this.fb.group({
-    question: ['', Validators.required],
-    image: ['', Validators.required],
-    options: this.fb.array([
+    questions: this.fb.array([
       this.fb.group({
-        option: ['', [Validators.required]],
-        isAnswer: ['', []],
-      }),
+        question: ['', Validators.required],
+        image: ['', Validators.required],
+        options: this.fb.array([
+          this.fb.group({
+            option: ['', [Validators.required]],
+            isAnswer: ['', []],
+          }),
 
-      this.fb.group({
-        option: ['', [Validators.required]],
-        isAnswer: ['', []],
-      }),
+          this.fb.group({
+            option: ['', [Validators.required]],
+            isAnswer: ['', []],
+          }),
 
-      this.fb.group({
-        option: ['', [Validators.required]],
-        isAnswer: ['', []],
-      }),
+          this.fb.group({
+            option: ['', [Validators.required]],
+            isAnswer: ['', []],
+          }),
 
-      this.fb.group({
-        option: ['', [Validators.required]],
-        isAnswer: ['', []],
+          this.fb.group({
+            option: ['', [Validators.required]],
+            isAnswer: ['', []],
+          }),
+        ]),
+        subject: ['', Validators.required],
+        chapter: ['', Validators.required],
+        source: ['', Validators.required],
       }),
     ]),
-    subject: ['', Validators.required],
-    chapter: ['', Validators.required],
-    source: ['', Validators.required],
   });
 
-  get optionsArray() {
-    return this.addQuestionForm.get('options') as FormArray;
+  get QuestionsArray() {
+    return this.addQuestionForm.get('questions') as FormArray;
   }
 
-  onAddNew() {
+  get optionsArray() {
+    return (this.addQuestionForm.get('questions') as FormArray)
+      .at(0)
+      .get('options') as FormArray;
+  }
+
+  onAddNewQuestion() {
     const newQuestion = this.fb.group({
-      option: ['', [Validators.required]],
-      isAnswer: ['', []],
+      question: ['', Validators.required],
+      image: ['', Validators.required],
+      options: this.fb.array([
+        this.fb.group({
+          option: ['', [Validators.required]],
+          isAnswer: ['', []],
+        }),
+
+        this.fb.group({
+          option: ['', [Validators.required]],
+          isAnswer: ['', []],
+        }),
+
+        this.fb.group({
+          option: ['', [Validators.required]],
+          isAnswer: ['', []],
+        }),
+
+        this.fb.group({
+          option: ['', [Validators.required]],
+          isAnswer: ['', []],
+        }),
+      ]),
+      subject: ['', Validators.required],
+      chapter: ['', Validators.required],
+      source: ['', Validators.required],
     });
 
-    //this.optionsArray.push(newQuestion);
+    this.QuestionsArray.push(newQuestion);
   }
 
   onAddQuestionSubmit() {
     console.log(this.addQuestionForm.value);
   }
+
+  ngOnInit() {}
 }
